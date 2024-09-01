@@ -1,16 +1,15 @@
 package com.example.RideSharingApplication.services;
 
-import com.example.RideSharingApplication.dto.DriverDto;
-import com.example.RideSharingApplication.dto.SignUpDto;
-import com.example.RideSharingApplication.dto.UserDto;
-import com.example.RideSharingApplication.entities.Driver;
 
-public interface AuthService  {
+import com.example.RideSharingApplication.dto.DriverDto;
+import com.example.RideSharingApplication.dto.SignupDto;
+import com.example.RideSharingApplication.dto.UserDto;
+
+public interface AuthService {
 
     String login(String email, String password);
 
-    UserDto signUp(SignUpDto signUpDto);
+    UserDto signup(SignupDto signupDto);
 
     DriverDto onboardNewDriver(Long userId);
-
 }

@@ -1,38 +1,29 @@
 package com.example.RideSharingApplication.dto;
 
-import com.example.RideSharingApplication.entities.Driver;
-import com.example.RideSharingApplication.entities.Rider;
+
 import com.example.RideSharingApplication.entities.enums.PaymentMethod;
 import com.example.RideSharingApplication.entities.enums.RideStatus;
-import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.locationtech.jts.geom.Point;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
+@Data
 public class RideDto {
+
     private Long id;
-
-
-    private Point pickupLocation;
-    private Point dropOffLocation;
-
-
+    private PointDto pickupLocation;
+    private PointDto dropOffLocation;
 
     private LocalDateTime createdTime;
-
-
     private RiderDto rider;
-
     private DriverDto driver;
-
-
     private PaymentMethod paymentMethod;
 
+    private RideStatus rideStatus;
 
-    private RideStatus rideRequestStatus;
+    private String otp;
 
     private Double fare;
-    private LocalDateTime startedTime;
-    private LocalDateTime endedTime;
+    private LocalDateTime startedAt;
+    private LocalDateTime endedAt;
 }

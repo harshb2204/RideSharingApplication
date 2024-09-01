@@ -1,6 +1,5 @@
 package com.example.RideSharingApplication.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,9 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SignUpDto {
+public class SignupDto {
 
     private String name;
     private String email;
     private String password;
+
 }

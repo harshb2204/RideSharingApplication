@@ -10,23 +10,20 @@ import org.locationtech.jts.geom.Point;
 @Setter
 public class Driver {
 
-
     @Id
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
-    private double rating;
-
 
     @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    private Boolean isAvailable;
+    private Double rating;
+
+    private Boolean available;
+
+    private String vehicleId;
 
     @Column(columnDefinition = "Geometry(Point, 4326)")
-
-    Point currentLocation;
-
+    private Point currentLocation;
 }

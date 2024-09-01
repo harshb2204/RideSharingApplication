@@ -3,6 +3,7 @@ package com.example.RideSharingApplication.services;
 import com.example.RideSharingApplication.dto.RideRequestDto;
 import com.example.RideSharingApplication.entities.Driver;
 import com.example.RideSharingApplication.entities.Ride;
+import com.example.RideSharingApplication.entities.RideRequest;
 import com.example.RideSharingApplication.entities.enums.RideStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -13,9 +14,9 @@ public interface RideService {
 
     void matchWithDrivers(RideRequestDto rideRequestDto);
 
-    Ride createNewRide(RideRequestDto rideRequestDto, Driver driver);
+    Ride createNewRide(RideRequest rideRequest, Driver driver);
 
-    Ride updateRideStatus(Long rideId, RideStatus rideStatus);
+    Ride updateRideStatus(Ride ride, RideStatus rideStatus);
 
     Page<Ride> getAllRidesOfRider(Long riderId, PageRequest pageRequest);
 

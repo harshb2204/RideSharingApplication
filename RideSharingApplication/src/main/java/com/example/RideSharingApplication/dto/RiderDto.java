@@ -5,10 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-
+@AllArgsConstructor
 public class RiderDto {
-    private UserDto userDto;
-    private double rating;
+
+    private UserDto user;
+    private Double rating;
 }

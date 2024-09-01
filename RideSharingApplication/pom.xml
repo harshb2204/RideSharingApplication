@@ -57,10 +57,9 @@
 
 
 		<dependency>
-			<groupId>org.hibernate</groupId>
+			<groupId>org.hibernate.orm</groupId>
 			<artifactId>hibernate-spatial</artifactId>
 			<version>6.5.2.Final</version>
-			<type>pom</type>
 		</dependency>
 
 		<dependency>
