@@ -4,11 +4,17 @@ package com.example.RideSharingApplication.entities;
 import com.example.RideSharingApplication.entities.enums.PaymentMethod;
 import com.example.RideSharingApplication.entities.enums.PaymentStatus;
 import jakarta.persistence.*;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

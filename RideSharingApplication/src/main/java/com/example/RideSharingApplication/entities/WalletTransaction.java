@@ -3,11 +3,17 @@ package com.example.RideSharingApplication.entities;
 import com.example.RideSharingApplication.entities.enums.TransactionMethod;
 import com.example.RideSharingApplication.entities.enums.TransactionType;
 import jakarta.persistence.*;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class WalletTransaction {
 
     @Id
@@ -25,6 +31,8 @@ public class WalletTransaction {
     @OneToOne
     // One-to-one mapping with the `Ride` entity. Each transaction can be linked to one ride.
     private Ride ride;
+
+    private String transactionId;
 
     @ManyToOne
     // Many transactions can belong to one wallet.

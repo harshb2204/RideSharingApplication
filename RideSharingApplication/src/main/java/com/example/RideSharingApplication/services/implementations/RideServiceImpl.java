@@ -1,9 +1,9 @@
 package com.example.RideSharingApplication.services.implementations;
 
-import com.example.RideSharingApplication.dto.RideRequestDto;
 import com.example.RideSharingApplication.entities.Driver;
 import com.example.RideSharingApplication.entities.Ride;
 import com.example.RideSharingApplication.entities.RideRequest;
+import com.example.RideSharingApplication.entities.Rider;
 import com.example.RideSharingApplication.entities.enums.RideRequestStatus;
 import com.example.RideSharingApplication.entities.enums.RideStatus;
 import com.example.RideSharingApplication.exceptions.ResourceNotFoundException;
@@ -34,10 +34,7 @@ public class RideServiceImpl implements RideService {
 
     }
 
-    @Override
-    public void matchWithDrivers(RideRequestDto rideRequestDto) {
 
-    }
 
     @Override
     public Ride createNewRide(RideRequest rideRequest, Driver driver) {
@@ -60,13 +57,15 @@ public class RideServiceImpl implements RideService {
     }
 
     @Override
-    public Page<Ride> getAllRidesOfRider(Long riderId, PageRequest pageRequest) {
-        return null;
+    public Page<Ride> getAllRidesOfRider(Rider rider, PageRequest pageRequest) {
+        return rideRepository.findByRider(rider, pageRequest);
+
     }
 
     @Override
-    public Page<Ride> getAllRidesOfDriver(Long driverId, PageRequest pageRequest) {
-        return null;
+    public Page<Ride> getAllRidesOfDriver(Driver driver, PageRequest pageRequest) {
+
+        return rideRepository.findByDriver(driver, pageRequest);
     }
 
     private String generateRandomOTP(){

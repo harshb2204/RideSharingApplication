@@ -6,8 +6,8 @@ import com.example.RideSharingApplication.dto.RideRequestDto;
 import com.example.RideSharingApplication.dto.RiderDto;
 import com.example.RideSharingApplication.entities.Rider;
 import com.example.RideSharingApplication.entities.User;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public interface RiderService {
 
@@ -15,7 +15,7 @@ public interface RiderService {
     RideDto cancelRide(Long rideId);
     DriverDto rateDriver(Long rideId, Integer rating);
     RiderDto getMyProfile();
-    List<RideDto> getAllMyRides();
+    Page<RideDto> getAllMyRides(PageRequest pageRequest);
     Rider createNewRider(User user);
     Rider getCurrentRider();
 }

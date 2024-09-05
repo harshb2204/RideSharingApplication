@@ -4,8 +4,8 @@ import com.example.RideSharingApplication.dto.DriverDto;
 import com.example.RideSharingApplication.dto.RideDto;
 import com.example.RideSharingApplication.dto.RiderDto;
 import com.example.RideSharingApplication.entities.Driver;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public interface DriverService {
 
@@ -21,7 +21,9 @@ public interface DriverService {
 
     DriverDto getMyProfile();
 
-    List<RideDto> getAllMyRides();
+    Page<RideDto> getAllMyRides(PageRequest pageRequest);
 
     Driver getCurrentDriver();
+
+    Driver updateDriverAvailability(Driver driver, boolean avaialable);
 }
